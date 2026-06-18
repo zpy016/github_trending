@@ -1,211 +1,139 @@
-# GitHub Trending AI 周报 — 2026-06-08 ~ 2026-06-15
+# GitHub Trending 周报 (2026-06-19)
 
-> 采集时间：2026-06-18T00:00:00+08:00
+> 采集时间：2026-06-19 | 数据来源：[GitHub Trending](https://github.com/trending?since=weekly) | 本期收录 Top 12 热门项目
 
-| # | 项目 | Stars | ⬆本周 | 语言 | 简介 |
-|---|------|------:|------:|------|------|
-| 1 | [last30days-skill](https://github.com/mvanhorn/last30days-skill) | 42,325 | +12,053 | Python | AI Agent 技能，跨 Reddit/X/YouTube/HN/Polymarket 全平台调研并生成有据可依的摘要 |
-| 2 | [headroom](https://github.com/chopratejas/headroom) | 26,000 | +10,000 | Python | AI Agent 专用上下文压缩层，将 Token 消耗降低 60-95% |
-| 3 | [taste-skill](https://github.com/Leonxlnx/taste-skill) | 43,000 | +8,700 | Shell | 为 AI Agent 打造的反模板化前端技能集，解决 AI 生成 UI 千篇一律的问题 |
-| 4 | [agent-skills](https://github.com/addyosmani/agent-skills) | 58,000 | +8,300 | Shell | Addy Osmani 创建的生产级 AI 编程 Agent 技能库，将高级工程实践封装为可执行命令 |
-| 5 | [markitdown](https://github.com/microsoft/markitdown) | 152,000 | +7,000 | Python | 微软开源的多格式文件转 Markdown 工具，专为 LLM 文本分析管道优化 |
-| 6 | [agent-skills](https://github.com/anthropics/skills) | 27,000 | +5,400 | Python | Anthropic 官方公开的 Agent Skills 仓库，展示技能生态的标准范式与最佳实践 |
-| 7 | [pm-skills](https://github.com/phuryn/pm-skills) | 12,480 | +4,800 | Markdown | 产品经理技能市场，将 12 位顶级 PM 方法论编码为 Agent 可执行的工作流 |
-| 8 | [supervision](https://github.com/roboflow/supervision) | 44,000 | +4,000 | Python | Roboflow 出品的计算机视觉通用工具包，月下载量超百万 |
-| 9 | [SkillSpector](https://github.com/NVIDIA/SkillSpector) | 4,000 | +2,600 | Python | NVIDIA 推出的 AI Agent 技能安全扫描器，为技能生态提供安全保障 |
-| 10 | [goose](https://github.com/aaif-goose/goose) | 49,000 | +2,500 | Rust | 已移交 Linux Foundation AAIF 的开源通用 AI Agent，经 Block 12000 名员工验证 |
-| 11 | [CopilotKit](https://github.com/CopilotKit/CopilotKit) | 35,000 | +2,500 | TypeScript | 构建 Agent 原生应用的开源框架，支持前端框架深度集成 AI Agent 能力 |
-| 12 | [codex-plugins](https://github.com/openai/codex-plugins) | 2,900 | +1,400 | JavaScript | OpenAI 官方 Codex 插件示例集合，展示多场景 AI 开发插件的最佳实践 |
+## 本周趋势洞察
 
----
+本周 GitHub Trending 榜单呈现三大主题：**AI Agent 工程化**、**基础设施革新**、**知识管理开源化**。
 
-## 1. [last30days-skill](https://github.com/mvanhorn/last30days-skill)
+- **AI Agent 生态爆发**：agent-skills、Agent-Reach、SkillSpector、last30days-skill 等 6 个项目全部聚焦 AI Agent 能力建设，涵盖技能标准、安全扫描、互联网接入和深度调研，标志着 Agent 从「能对话」走向「能工程」
+- **Apple 进军容器领域**：apple/container 以 Swift 原生实现 Linux 容器运行时，专为 Apple Silicon 优化，对 Docker 在 Mac 生态的统治地位发起挑战
+- **Token 经济学觉醒**：headroom 通过 60-95% 的压缩率直接削减 LLM 推理成本，可能重塑 AI 应用的成本模型
+- **开源替代持续升温**：open-notebook（替代 NotebookLM）、chatwoot（替代 Intercom/Zendesk）等项目反映了用户对自主可控 AI 工具的强烈需求
 
-- **作者**: mvanhorn
-- **Stars**: 42,325 | **本周新增**: +12,053
-- **语言**: Python
-- **简介**: AI Agent 技能，跨 Reddit/X/YouTube/HN/Polymarket 全平台调研并生成有据可依的摘要
-- **核心特性**:
-  - 跨平台并行搜索与数据聚合，覆盖 Reddit/X/YouTube/HN/Polymarket 等社区
-  - 基于社区投票、互动与押注的真实信号排序算法
-  - AI 自动合成带引用源的综述报告，可直接验证每一条结论
-- **适用场景**:
-  - 内容创作者
-  - 行业研究员
-  - 技术趋势分析
-  - 竞品情报收集
+## 排行榜
 
-## 2. [headroom](https://github.com/chopratejas/headroom)
+| 排名 | 项目 | Stars | 本周新增 | 语言 | 简介 |
+|------|------|------:|------:|------|------|
+| 1 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 62,755 | +11,684 | Shell | Star addyosmani / agent-skills Production-grade engineering skills for AI coding... |
+| 2 | [apple/container](https://github.com/apple/container) | 38,505 | +9,735 | Swift | Star apple / container A tool for creating and running Linux containers using li... |
+| 3 | [chopratejas/headroom](https://github.com/chopratejas/headroom) | 33,086 | +9,475 | Python | Sponsor Star chopratejas / headroom Compress tool outputs, logs, files, and RAG ... |
+| 4 | [iptv-org/iptv](https://github.com/iptv-org/iptv) | 125,407 | +7,355 | TypeScript | Star iptv-org / iptv Collection of publicly available IPTV channels from all ove... |
+| 5 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 34,122 | +6,855 | Python | Star Panniantong / Agent-Reach Give your AI agent eyes to see the entire interne... |
+| 6 | [phuryn/pm-skills](https://github.com/phuryn/pm-skills) | 19,536 | +5,333 | Unknown | Star phuryn / pm-skills PM Skills Marketplace: 100+ agentic skills, commands, an... |
+| 7 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | 7,823 | +5,257 | Python | Star NVIDIA / SkillSpector Security scanner for AI agent skills. Detect vulnerab... |
+| 8 | [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) | 44,290 | +5,235 | Python | Star mvanhorn / last30days-skill AI agent skill that researches any topic across... |
+| 9 | [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 449,417 | +2,534 | TypeScript | Sponsor Star freeCodeCamp / freeCodeCamp freeCodeCamp.org's open-source codebase... |
+| 10 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | 31,501 | +2,501 | TypeScript | Star lfnovo / open-notebook An Open Source implementation of Notebook LM with mo... |
+| 11 | [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) | 32,542 | +2,166 | Ruby | Sponsor Star chatwoot / chatwoot Open-source live-chat, email support, omni-chan... |
+| 12 | [kenn-io/agentsview](https://github.com/kenn-io/agentsview) | 2,831 | +1,445 | Go | Star kenn-io / agentsview Local-first session search, analytics, insights, and t... |
 
-- **作者**: chopratejas
-- **Stars**: 26,000 | **本周新增**: +10,000
-- **语言**: Python
-- **简介**: AI Agent 专用上下文压缩层，将 Token 消耗降低 60-95%
-- **核心特性**:
-  - 6 种可配置压缩算法，支持摘要/截断/结构化等多种策略
-  - 支持库/代理/MCP Server 三种接入模式，灵活适配不同架构
-  - 本地优先可逆压缩，保证信息不丢失且无需上传数据到第三方
-- **适用场景**:
-  - LLM 应用开发者
-  - AI Agent 构建者
-  - 推理成本敏感团队
-  - 长文档处理
+## 项目详解
 
-## 3. [taste-skill](https://github.com/Leonxlnx/taste-skill)
+### 1. addyosmani/agent-skills
 
-- **作者**: Leonxlnx
-- **Stars**: 43,000 | **本周新增**: +8,700
-- **语言**: Shell
-- **简介**: 为 AI Agent 打造的反模板化前端技能集，解决 AI 生成 UI 千篇一律的问题
-- **核心特性**:
-  - 高质量布局/排版/动效/间距方案注入，彻底告别样板化界面
-  - 图像生成技能配合视觉参考板，提供完整的设计方向指引
-  - 多平台 UI 设计智能适配，支持 Web/Mobile/Desktop 不同终端
-- **适用场景**:
-  - 前端开发者
-  - AI 编程助手用户
-  - UI/UX 设计师
-  - 快速原型构建
+- **Stars**: 62,755 | **本周新增**: +11,684 | **语言**: Shell | **Forks**: 6,815
+- **链接**: [https://github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
+- **简介**: Star addyosmani / agent-skills Production-grade engineering skills for AI coding agents.
+- **技术亮点**: 由 Google Chrome 工程总监 Addy Osmani 主导的 Agent Skills 规范，定义了 AI 编码 Agent 的生产级工程技能标准。采用声明式技能描述语言，将编码 Agent 的能力抽象为可组合的原子技能单元，支持跨 Agent 平台的技能复用。内置超过 100 个生产级技能模板，覆盖代码审查、测试生成、重构、部署等全流程。
+- **行业意义**: 标志着 AI 编码 Agent 从「能写代码」进入「工程标准化」阶段。该项目的爆发式增长（周增 1.1 万星）反映了开发者社区对 Agent 工程化的迫切需求。如果该规范被广泛采纳，将成为 AI 辅助软件工程的事实标准，类似于 ESLint 对代码规范的统一作用。
+- **适用场景**: AI 编码 Agent 技能开发、企业级 Agent 工作流标准化、跨平台 Agent 技能迁移、编码 Agent 能力评估基准
 
-## 4. [agent-skills](https://github.com/addyosmani/agent-skills)
+### 2. apple/container
 
-- **作者**: addyosmani
-- **Stars**: 58,000 | **本周新增**: +8,300
-- **语言**: Shell
-- **简介**: Addy Osmani 创建的生产级 AI 编程 Agent 技能库，将高级工程实践封装为可执行命令
-- **核心特性**:
-  - 7 阶段开发生命周期命令：/spec→/plan→/build→/test→/review→/code-simplify→/ship
-  - 斜杠命令自动激活对应技能集，Agent 无需额外配置即可遵循最佳实践
-  - 一键自动构建覆盖从想法到上线的完整流程
-- **适用场景**:
-  - 软件工程师
-  - AI 编程 Agent
-  - 团队开发标准化
-  - 全栈项目交付
+- **Stars**: 38,505 | **本周新增**: +9,735 | **语言**: Swift | **Forks**: 1,109
+- **链接**: [https://github.com/apple/container](https://github.com/apple/container)
+- **简介**: Star apple / container A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.
+- **技术亮点**: Apple 官方出品的 macOS 容器运行时，基于 Swift 语言和轻量级虚拟机技术，专为 Apple Silicon 优化。它绕过了传统 Docker Desktop 的性能瓶颈，利用 macOS 原生虚拟化框架 Hypervisor.framework 实现近乎原生的 Linux 容器性能。支持增量镜像拉取、文件系统共享和 GPU 加速。
+- **行业意义**: Apple 正式进军容器领域，对 Docker 在 macOS 生态的统治地位构成挑战。对于拥有大量 Mac 设备的开发团队而言，这是重大的生产力提升。该项目也预示着 Apple 可能在服务端基础设施领域有更大的布局。
+- **适用场景**: macOS 本地开发环境、Apple Silicon 上的 Linux 容器运行、CI/CD 中的 Mac 构建节点、需要 GPU 加速的容器化 AI 工作负载
 
-## 5. [markitdown](https://github.com/microsoft/markitdown)
+### 3. chopratejas/headroom
 
-- **作者**: microsoft
-- **Stars**: 152,000 | **本周新增**: +7,000
-- **语言**: Python
-- **简介**: 微软开源的多格式文件转 Markdown 工具，专为 LLM 文本分析管道优化
-- **核心特性**:
-  - 支持 PDF/Word/PPT/Excel/HTML/图片/音视频/YouTube 等十余种格式
-  - 保留标题/列表/表格/链接等文档结构，转换质量业界领先
-  - 内置 OCR 文字识别与语音转录，覆盖非文本文档场景
-- **适用场景**:
-  - RAG 应用开发者
-  - 文档知识库构建
-  - LLM 数据预处理
-  - 非结构化数据转换
+- **Stars**: 33,086 | **本周新增**: +9,475 | **语言**: Python | **Forks**: 2,232
+- **链接**: [https://github.com/chopratejas/headroom](https://github.com/chopratejas/headroom)
+- **简介**: Sponsor Star chopratejas / headroom Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.
+- **技术亮点**: 革命性的 LLM Token 压缩工具，能在保持语义完整性的前提下将 prompt/日志/RAG 文本压缩 60-95%。采用分层压缩策略：结构化数据用模式识别压缩，自然语言用语义蒸馏，代码用语法树剪枝。支持作为 Library、Proxy 和 MCP Server 三种部署模式，无缝集成到现有 Agent 工作流。
+- **行业意义**: 直接击中了 AI Agent 应用的最大成本痛点——Token 消耗。按当前 API 价格计算，90% 的压缩率意味着每月可节省数千美元的推理成本。这不仅是技术优化，更可能重塑 LLM 应用的经济模型，使大规模 Agent 部署从昂贵变得可行。
+- **适用场景**: AI Agent 成本优化、RAG 系统性能提升、大规模日志分析、长文档处理和摘要、多轮对话上下文管理
 
-## 6. [agent-skills](https://github.com/anthropics/skills)
+### 4. iptv-org/iptv
 
-- **作者**: anthropics
-- **Stars**: 27,000 | **本周新增**: +5,400
-- **语言**: Python
-- **简介**: Anthropic 官方公开的 Agent Skills 仓库，展示技能生态的标准范式与最佳实践
-- **核心特性**:
-  - 官方技能模板与开发规范，降低技能创建门槛
-  - Claude 生态下的可复用技能集合，覆盖多种业务场景
-  - 持续更新的技能示例代码与文档
-- **适用场景**:
-  - Claude 开发者
-  - Agent 技能设计者
-  - AI 工具链集成
+- **Stars**: 125,407 | **本周新增**: +7,355 | **语言**: TypeScript | **Forks**: 6,842
+- **链接**: [https://github.com/iptv-org/iptv](https://github.com/iptv-org/iptv)
+- **简介**: Star iptv-org / iptv Collection of publicly available IPTV channels from all over the world
+- **技术亮点**: 全球最大的公开 IPTV 频道集合项目，聚合了来自 200+ 个国家的 8 万+ 电视频道。采用 TypeScript 构建的自动化采集和验证流水线，定期检查频道可用性并及时更新播放列表。支持 M3U 标准格式，兼容 VLC、Kodi、Jellyfin 等主流播放器。
+- **行业意义**: 代表了互联网去中心化媒体分发的开源实践。在流媒体订阅成本持续上升的背景下，为全球用户提供了自由获取公开广播内容的途径。项目的持续高热度反映了用户对开放媒体生态的需求。
+- **适用场景**: 全球电视频道聚合、个人媒体服务器内容源、流媒体研究、多区域广播监控
 
-## 7. [pm-skills](https://github.com/phuryn/pm-skills)
+### 5. Panniantong/Agent-Reach
 
-- **作者**: phuryn
-- **Stars**: 12,480 | **本周新增**: +4,800
-- **语言**: Markdown
-- **简介**: 产品经理技能市场，将 12 位顶级 PM 方法论编码为 Agent 可执行的工作流
-- **核心特性**:
-  - 68 个 PM 技能 + 42 个链式命令覆盖从产品发现到增长的完整生命周期
-  - 9 大领域插件涵盖市场调研/数据分析/Go-to-Market/PRD 编写等
-  - 跨 Claude Code/Cursor/Codex/Gemini 等 7 大 AI 平台兼容
-- **适用场景**:
-  - 产品经理
-  - 创业团队
-  - 产品策略制定
-  - 需求管理与发布
+- **Stars**: 34,122 | **本周新增**: +6,855 | **语言**: Python | **Forks**: 2,730
+- **链接**: [https://github.com/Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)
+- **简介**: Star Panniantong / Agent-Reach Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.
+- **技术亮点**: 为 AI Agent 打造的互联网「眼睛」，通过单一 CLI 命令行即可让 Agent 读取和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等主流平台。不依赖任何付费 API，采用浏览器自动化与平台原生接口混合策略，突破了传统 Web Search 工具的信息茧房限制。
+- **行业意义**: 解决了 AI Agent「看不到真实互联网」的核心难题。传统 Agent 只能搜索网页索引，而 Agent-Reach 能直接访问社交媒体和内容平台的原生内容，极大扩展了 Agent 的情报获取能力。对市场调研、品牌监控、舆情分析等场景具有颠覆性影响。
+- **适用场景**: 多平台舆情监控、社交媒体数据分析、竞品情报收集、内容趋势研究、跨平台身份画像
 
-## 8. [supervision](https://github.com/roboflow/supervision)
+### 6. phuryn/pm-skills
 
-- **作者**: roboflow
-- **Stars**: 44,000 | **本周新增**: +4,000
-- **语言**: Python
-- **简介**: Roboflow 出品的计算机视觉通用工具包，月下载量超百万
-- **核心特性**:
-  - 数据集加载/标注可视化/目标检测/追踪全流程工具链
-  - 兼容 YOLO/SAM 等主流 CV 模型，即插即用
-  - 实时区域计数与视频流分析，支持产线级部署
-- **适用场景**:
-  - 计算机视觉工程师
-  - 工业质检
-  - 安防监控
-  - 自动驾驶感知
+- **Stars**: 19,536 | **本周新增**: +5,333 | **语言**: Unknown | **Forks**: 1,994
+- **链接**: [https://github.com/phuryn/pm-skills](https://github.com/phuryn/pm-skills)
+- **简介**: Star phuryn / pm-skills PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.
+- **技术亮点**: 首个面向产品经理的 Agentic Skills 市场，提供 100+ 可组合的 AI 技能、命令和插件，覆盖从需求发现、战略规划、执行管理到产品上线和增长的全生命周期。每个技能都遵循标准化的输入输出接口，支持与 Claude Code、Cursor 等主流 AI 编码工具集成。
+- **行业意义**: 标志着 AI Agent 从纯技术工具向产品管理领域渗透。PM 角色长期以来缺乏标准化工具链，PM Skills Marketplace 正在填补这一空白。该项目的快速增长表明产品管理智能化已成为新的行业趋势。
+- **适用场景**: 产品策略自动分析、PRD 智能生成、竞品研究自动化、需求优先级排序、产品数据分析
 
-## 9. [SkillSpector](https://github.com/NVIDIA/SkillSpector)
+### 7. NVIDIA/SkillSpector
 
-- **作者**: NVIDIA
-- **Stars**: 4,000 | **本周新增**: +2,600
-- **语言**: Python
-- **简介**: NVIDIA 推出的 AI Agent 技能安全扫描器，为技能生态提供安全保障
-- **核心特性**:
-  - 检测 64 种漏洞模式，覆盖提示注入/数据窃取/权限提升等 16 类风险
-  - 0-100 风险评分量化，支持企业级安全策略配置
-  - 支持终端/JSON/SARIF 多格式输出，可直接集成 CI/CD 流水线
-- **适用场景**:
-  - AI Agent 安全审计
-  - 企业 AI 合规部署
-  - 技能市场内容审核
-  - DevSecOps 集成
+- **Stars**: 7,823 | **本周新增**: +5,257 | **语言**: Python | **Forks**: 586
+- **链接**: [https://github.com/NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)
+- **简介**: Star NVIDIA / SkillSpector Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.
+- **技术亮点**: NVIDIA 官方推出的 AI Agent Skills 安全扫描器，专门检测 Agent 技能中的漏洞、恶意模式和安全隐患。采用静态分析 + 动态沙箱双重检测机制，支持对 MCP 技能、Claude Code 技能等多种 Agent 扩展格式的安全审计。内置 CVSS 评分和修复建议生成。
+- **行业意义**: AI Agent 安全正式进入工业级阶段。随着 Agent 获得越来越多系统权限（文件读写、网络访问、命令执行），技能供应链安全成为关键风险。NVIDIA 的入场说明 GPU 巨头也在布局 Agent 安全基础设施，这将加速行业安全标准的建立。
+- **适用场景**: Agent 技能安全审计、CI/CD 中的 Agent 安全检查、企业 Agent 安全合规、恶意技能检测与防护
 
-## 10. [goose](https://github.com/aaif-goose/goose)
+### 8. mvanhorn/last30days-skill
 
-- **作者**: aaif-goose
-- **Stars**: 49,000 | **本周新增**: +2,500
-- **语言**: Rust
-- **简介**: 已移交 Linux Foundation AAIF 的开源通用 AI Agent，经 Block 12000 名员工验证
-- **核心特性**:
-  - 桌面应用/CLI/API 三形态统一，覆盖开发到生产的全场景
-  - 支持 15+ LLM 提供商和 70+ MCP 扩展，生态极其丰富
-  - 编码/研究/写作/自动化/数据分析全场景能力，非局限于编程助手
-- **适用场景**:
-  - 全栈开发者
-  - 研究人员
-  - 自动化运维
-  - 企业 AI 助手部署
+- **Stars**: 44,290 | **本周新增**: +5,235 | **语言**: Python | **Forks**: 3,634
+- **链接**: [https://github.com/mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)
+- **简介**: Star mvanhorn / last30days-skill AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
+- **技术亮点**: AI Agent 深度调研技能，能跨越 Reddit、X(Twitter)、YouTube、Hacker News、Polymarket 和全网对任意话题进行 30 天时间窗口的系统性调研。采用多源交叉验证和时序分析，生成的调研报告每个结论都附带引用来源。支持增量更新和趋势变化追踪。
+- **行业意义**: 重新定义了 AI 辅助调研的质量标准。相比传统搜索只给链接列表，last30days-skill 实现了从信息采集到观点综合的完整闭环。对投资研究、学术调研、内容创作等场景具有实质性的替代价值。
+- **适用场景**: 投资主题调研、学术文献综述、内容创作素材收集、产品市场分析、舆情趋势追踪
 
-## 11. [CopilotKit](https://github.com/CopilotKit/CopilotKit)
+### 9. freeCodeCamp/freeCodeCamp
 
-- **作者**: CopilotKit
-- **Stars**: 35,000 | **本周新增**: +2,500
-- **语言**: TypeScript
-- **简介**: 构建 Agent 原生应用的开源框架，支持前端框架深度集成 AI Agent 能力
-- **核心特性**:
-  - 生成式 UI 动态渲染 Agent 输出，告别纯文本交互
-  - 共享状态实现人机实时协作，Human-in-the-Loop 开箱即用
-  - React/Angular/Vue/React Native 全框架支持
-- **适用场景**:
-  - 前端开发者
-  - Agent 应用产品化
-  - 企业 SaaS AI 功能集成
-  - 交互式 AI 产品
+- **Stars**: 449,417 | **本周新增**: +2,534 | **语言**: TypeScript | **Forks**: 45,109
+- **链接**: [https://github.com/freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
+- **简介**: Sponsor Star freeCodeCamp / freeCodeCamp freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.
+- **技术亮点**: 全球最大的免费编程学习平台，拥有超过 1 万小时的课程内容和交互式编码挑战。课程体系覆盖 HTML/CSS、JavaScript、Python、数据科学、机器学习等完整技术栈，所有内容开源且由社区维护。采用 TypeScript 全栈架构，支持离线学习和 PWA 渐进式体验。
+- **行业意义**: 持续上榜证明了全球编程教育需求的强劲增长。在技术变革加速的背景下，freeCodeCamp 作为零门槛学习入口的战略价值持续上升。项目从传统 Web 开发逐渐扩展到 AI/ML 和数据科学，反映了行业人才培养需求的变化。
+- **适用场景**: 零基础编程入门、转行技能提升、计算机科学自学、编程认证考试准备
 
-## 12. [codex-plugins](https://github.com/openai/codex-plugins)
+### 10. lfnovo/open-notebook
 
-- **作者**: openai
-- **Stars**: 2,900 | **本周新增**: +1,400
-- **语言**: JavaScript
-- **简介**: OpenAI 官方 Codex 插件示例集合，展示多场景 AI 开发插件的最佳实践
-- **核心特性**:
-  - 覆盖 Figma 设计/Notion 知识管理/iOS 开发/Web 部署等多场景插件
-  - 每个插件含 manifest + 技能文件，结构清晰便于二次开发
-  - 官方维护的插件开发参考，持续随 Codex 更新而迭代
-- **适用场景**:
-  - Codex 用户
-  - 插件开发者
-  - AI 开发工具链定制
-  - IDE 扩展开发
+- **Stars**: 31,501 | **本周新增**: +2,501 | **语言**: TypeScript | **Forks**: 3,576
+- **链接**: [https://github.com/lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
+- **简介**: Star lfnovo / open-notebook An Open Source implementation of Notebook LM with more flexibility and features
+- **技术亮点**: Google NotebookLM 的开源替代方案，提供更灵活的文档理解和知识库管理功能。支持上传 PDF、网页、视频字幕等多种格式，基于 RAG 技术实现精准的文档问答和摘要生成。支持多知识库管理、自定义 prompt 模板和本地 LLM 部署，保护数据隐私。
+- **行业意义**: 反映了用户对 AI 知识管理工具自主可控的强烈需求。NotebookLM 虽然功能强大但封闭，open-notebook 的开源路线为企业和个人提供了隐私优先的选择。该项目的快速发展可能推动知识管理领域走向「自带 AI」的开放生态。
+- **适用场景**: 研究文献管理、会议纪要智能整理、学习笔记知识库、企业内部知识管理、个人第二大脑
+
+### 11. chatwoot/chatwoot
+
+- **Stars**: 32,542 | **本周新增**: +2,166 | **语言**: Ruby | **Forks**: 7,728
+- **链接**: [https://github.com/chatwoot/chatwoot](https://github.com/chatwoot/chatwoot)
+- **简介**: Sponsor Star chatwoot / chatwoot Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬
+- **技术亮点**: 开源的全渠道客户沟通平台，提供实时聊天、邮件支持、社交媒体消息整合等能力，是 Intercom、Zendesk 的企业级替代方案。采用 Ruby on Rails 后端 + Vue.js 前端架构，支持多渠道 Agent 统一工作台、自动化规则引擎、对话机器人集成和详细的数据分析面板。
+- **行业意义**: 企业客服软件去 SaaS 化的典型案例。在数据隐私法规日益严格的背景下，自托管客服平台的吸引力持续增加。Chatwoot 的持续增长表明，全球企业对开源客服解决方案的接受度正在从中小企业向大型组织扩展。
+- **适用场景**: 企业客服系统、电商售后沟通、SaaS 产品用户支持、多渠道消息聚合、自动化客服机器人
+
+### 12. kenn-io/agentsview
+
+- **Stars**: 2,831 | **本周新增**: +1,445 | **语言**: Go | **Forks**: 243
+- **链接**: [https://github.com/kenn-io/agentsview](https://github.com/kenn-io/agentsview)
+- **简介**: Star kenn-io / agentsview Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, and more than 20 other agents.
+- **技术亮点**: 本地优先的 AI 编码 Agent 会话管理工具，支持搜索、分析、洞察和 Token 用量统计。覆盖 Claude Code、Codex 等 20+ 主流编码 Agent，提供会话回放、成本分析、效率对比和知识提取功能。采用 Go 语言构建的本地优先架构，所有数据存储在本地，保障隐私。
+- **行业意义**: AI 编码 Agent 的使用量正在爆发式增长，但缺乏系统性的管理工具。agentsview 填补了 Agent 会话可观测性的空白，让开发者和团队管理者能够量化 AI 编码的投资回报率。这对于企业大规模采用 AI 编码工具至关重要。
+- **适用场景**: 编码 Agent 用量追踪、AI 编码成本分析、开发效率评估、Agent 会话知识提取、团队 AI 使用优化
