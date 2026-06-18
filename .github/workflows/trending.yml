@@ -1,0 +1,59 @@
+name: Weekly GitHub Trending AI/ML Tracker
+
+on:
+  schedule:
+    # 每周一 9:40 CST = 每周一 1:40 UTC
+    - cron: '40 1 * * 1'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  collect-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install -r trending-tracker/requirements.txt
+          playwright install chromium
+
+      - name: Collect trending projects
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python trending-tracker/collect_trending.py
+
+      - name: Build HTML page
+        run: python trending-tracker/build_page.py
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: trending-tracker/github-trending-tracker.html
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add trending-tracker/trending_data.json trending-tracker/github-trending-tracker.html
+          git diff --staged --quiet || git commit -m "📊 Update trending data [$(date +%Y-W%V)]"
+          git push

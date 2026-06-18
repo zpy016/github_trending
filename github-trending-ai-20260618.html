@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending AI/ML 周榜 · 2026-06-18</title>
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: linear-gradient(160deg, #4338ca 0%, #312e81 30%, #1e1b4b 60%, #0f0d1e 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #e8e6f0;
+  line-height: 1.6;
+  padding: 40px 20px 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e8e6f0 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: .02em;
+  margin-bottom: 12px;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.date-badge {
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(165, 180, 252, 0.25);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: .9rem;
+  color: #a5b4fc;
+}
+
+.period-text {
+  font-size: .85rem;
+  color: #a5a0c8;
+}
+
+/* Trend Bar */
+.trend-bar {
+  background: rgba(30, 27, 75, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 14px 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: .92rem;
+  color: #a5b4fc;
+}
+
+.trend-bar span {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.card {
+  background: rgba(30, 27, 75, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform .2s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(67, 56, 202, 0.25), 0 0 0 1px rgba(99, 102, 241, 0.3) inset;
+}
+
+/* Card Header */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.rank {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0f0d1e;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+}
+
+.project-name {
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e8e6f0;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.project-name:hover {
+  color: #a5b4fc;
+}
+
+.lang-pill {
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  letter-spacing: .03em;
+}
+
+.lang-Python { background: rgba(55, 118, 171, 0.3); color: #8bb8e8; }
+.lang-Shell { background: rgba(78, 170, 37, 0.3); color: #8fd16f; }
+.lang-Rust { background: rgba(222, 165, 132, 0.3); color: #dea584; }
+.lang-TypeScript { background: rgba(49, 120, 198, 0.3); color: #8bb8e8; }
+.lang-JavaScript { background: rgba(247, 223, 30, 0.25); color: #f7df1e; }
+.lang-Markdown { background: rgba(109, 109, 109, 0.3); color: #b0b0b0; }
+
+/* Star Row */
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 16px;
+  font-size: .9rem;
+}
+
+.total-stars {
+  color: #a5a0c8;
+}
+
+.total-stars strong {
+  color: #e8e6f0;
+  font-size: 1.05rem;
+}
+
+.weekly-gain {
+  color: #34d399;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.weekly-gain::before {
+  content: "↑";
+  margin-right: 3px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+  margin-bottom: 16px;
+}
+
+/* Summary */
+.summary {
+  font-size: .92rem;
+  font-weight: 600;
+  color: #ccc9e0;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: .85rem;
+  color: #a5a0c8;
+  margin-bottom: 7px;
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: .76rem;
+  padding: 5px 12px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 56px;
+  font-size: .82rem;
+  color: #6b668c;
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+  padding-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 24px 12px 40px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<header class="header">
+  <h1>GitHub Trending AI/ML 周榜</h1>
+  <div class="header-meta">
+    <span class="date-badge">2026-06-18</span>
+    <span class="period-text">数据周期：2026-06-08 ~ 2026-06-15</span>
+  </div>
+</header>
+
+<!-- Trend Bar -->
+<div class="trend-bar">
+  <span>本周热点：</span>Agent Skills · 上下文压缩 · AI 安全 · 多模态 · 产品化
+</div>
+
+<!-- Grid -->
+<div class="grid">
+
+<!-- #1 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">1</div>
+    <a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener" class="project-name">last30days-skill</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>42,325</strong></span>
+    <span class="weekly-gain">+12,053</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">AI Agent 技能，跨 Reddit/X/YouTube/HN/Polymarket 全平台调研并生成有据可依的摘要。</p>
+  <ul class="feature-list">
+    <li>跨平台并行搜索与数据聚合</li>
+    <li>基于社区投票/互动/押注的真实信号排序</li>
+    <li>AI 自动合成带引用源的综述报告</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">内容创作者</span>
+    <span class="tag">行业研究员</span>
+    <span class="tag">技术趋势分析</span>
+    <span class="tag">竞品情报收集</span>
+  </div>
+</div>
+
+<!-- #2 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">2</div>
+    <a href="https://github.com/chopratejas/headroom" target="_blank" rel="noopener" class="project-name">headroom</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>26,000</strong></span>
+    <span class="weekly-gain">+10,000</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">AI Agent 专用上下文压缩层，将 Token 消耗降低 60-95%。</p>
+  <ul class="feature-list">
+    <li>6 种可配置压缩算法（摘要/截断/结构化等）</li>
+    <li>支持库/代理/MCP Server 三种接入模式</li>
+    <li>本地优先可逆压缩保证信息不丢失</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">LLM 应用开发者</span>
+    <span class="tag">AI Agent 构建者</span>
+    <span class="tag">推理成本敏感团队</span>
+    <span class="tag">长文档处理</span>
+  </div>
+</div>
+
+<!-- #3 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">3</div>
+    <a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener" class="project-name">taste-skill</a>
+    <span class="lang-pill lang-Shell">Shell</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>43,000</strong></span>
+    <span class="weekly-gain">+8,700</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">为 AI Agent 打造的"反模板化"前端技能集，解决 AI 生成 UI 千篇一律的问题。</p>
+  <ul class="feature-list">
+    <li>高质量布局/排版/动效/间距方案注入</li>
+    <li>图像生成技能配合视觉参考板</li>
+    <li>多平台 UI 设计智能适配</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">前端开发者</span>
+    <span class="tag">AI 编程助手用户</span>
+    <span class="tag">UI/UX 设计师</span>
+    <span class="tag">快速原型构建</span>
+  </div>
+</div>
+
+<!-- #4 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">4</div>
+    <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener" class="project-name">agent-skills</a>
+    <span class="lang-pill lang-Shell">Shell</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>58,000</strong></span>
+    <span class="weekly-gain">+8,300</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">由 Addy Osmani 创建的生产级 AI 编程 Agent 技能库，将高级工程实践封装为可执行命令。</p>
+  <ul class="feature-list">
+    <li>7 阶段开发生命周期（/spec→/plan→/build→/test→/review→/code-simplify→/ship）</li>
+    <li>斜杠命令自动激活对应技能集</li>
+    <li>一键自动构建全流程覆盖</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">软件工程师</span>
+    <span class="tag">AI 编程 Agent</span>
+    <span class="tag">团队开发标准化</span>
+    <span class="tag">全栈项目交付</span>
+  </div>
+</div>
+
+<!-- #5 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">5</div>
+    <a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener" class="project-name">markitdown</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>152,000</strong></span>
+    <span class="weekly-gain">+7,000</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">微软开源的多格式文件转 Markdown 工具，专为 LLM 文本分析管道设计。</p>
+  <ul class="feature-list">
+    <li>支持 PDF/Word/PPT/Excel/HTML/图片/音视频/YouTube 等十余种格式</li>
+    <li>保留标题/列表/表格/链接等文档结构</li>
+    <li>内置 OCR 文字识别与语音转录</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">RAG 应用开发者</span>
+    <span class="tag">文档知识库构建</span>
+    <span class="tag">LLM 数据预处理</span>
+    <span class="tag">非结构化数据转换</span>
+  </div>
+</div>
+
+<!-- #6 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">6</div>
+    <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener" class="project-name">agent-skills</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>27,000</strong></span>
+    <span class="weekly-gain">+5,400</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">Anthropic 官方公开的 Agent Skills 仓库，展示技能生态的标准范式和最佳实践。</p>
+  <ul class="feature-list">
+    <li>官方技能模板与开发规范</li>
+    <li>Claude 生态下的可复用技能集合</li>
+    <li>多种场景的技能示例代码</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">Claude 开发者</span>
+    <span class="tag">Agent 技能设计者</span>
+    <span class="tag">AI 工具链集成</span>
+  </div>
+</div>
+
+<!-- #7 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">7</div>
+    <a href="https://github.com/phuryn/pm-skills" target="_blank" rel="noopener" class="project-name">pm-skills</a>
+    <span class="lang-pill lang-Markdown">Markdown</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>12,480</strong></span>
+    <span class="weekly-gain">+4,800</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">产品经理技能市场，将 12 位顶级 PM 方法论编码为 Agent 可执行的工作流。</p>
+  <ul class="feature-list">
+    <li>68 个 PM 技能 + 42 个链式命令覆盖发现到增长全流程</li>
+    <li>9 大领域插件（市场调研/数据分析/Go-to-Market 等）</li>
+    <li>跨 Claude Code/Cursor/Codex/Gemini 等 7 大 AI 平台兼容</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">产品经理</span>
+    <span class="tag">创业团队</span>
+    <span class="tag">产品策略制定</span>
+    <span class="tag">需求管理与发布</span>
+  </div>
+</div>
+
+<!-- #8 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">8</div>
+    <a href="https://github.com/roboflow/supervision" target="_blank" rel="noopener" class="project-name">supervision</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>44,000</strong></span>
+    <span class="weekly-gain">+4,000</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">Roboflow 出品的计算机视觉通用工具包，月下载量超百万。</p>
+  <ul class="feature-list">
+    <li>数据集加载/标注可视化/目标检测/追踪全流程工具</li>
+    <li>兼容 YOLO/SAM 等主流 CV 模型</li>
+    <li>实时区域计数与视频流分析</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">计算机视觉工程师</span>
+    <span class="tag">工业质检</span>
+    <span class="tag">安防监控</span>
+    <span class="tag">自动驾驶感知</span>
+  </div>
+</div>
+
+<!-- #9 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">9</div>
+    <a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener" class="project-name">SkillSpector</a>
+    <span class="lang-pill lang-Python">Python</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>4,000</strong></span>
+    <span class="weekly-gain">+2,600</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">NVIDIA 推出的 AI Agent 技能安全扫描器，为技能生态提供安全保障。</p>
+  <ul class="feature-list">
+    <li>检测 64 种漏洞模式覆盖提示注入/数据窃取/权限提升等 16 类风险</li>
+    <li>0-100 风险评分量化</li>
+    <li>支持终端/JSON/SARIF 多格式报告输出</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">AI Agent 安全审计</span>
+    <span class="tag">企业 AI 合规部署</span>
+    <span class="tag">技能市场内容审核</span>
+    <span class="tag">DevSecOps 集成</span>
+  </div>
+</div>
+
+<!-- #10 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">10</div>
+    <a href="https://github.com/aaif-goose/goose" target="_blank" rel="noopener" class="project-name">goose</a>
+    <span class="lang-pill lang-Rust">Rust</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>49,000</strong></span>
+    <span class="weekly-gain">+2,500</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">已移交 Linux Foundation AAIF 的开源通用 AI Agent，Block 内部 12000 名员工验证。</p>
+  <ul class="feature-list">
+    <li>桌面应用/CLI/API 三形态统一</li>
+    <li>支持 15+ LLM 提供商和 70+ MCP 扩展</li>
+    <li>编码/研究/写作/自动化/数据分析全场景覆盖</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">全栈开发者</span>
+    <span class="tag">研究人员</span>
+    <span class="tag">自动化运维</span>
+    <span class="tag">企业 AI 助手部署</span>
+  </div>
+</div>
+
+<!-- #11 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">11</div>
+    <a href="https://github.com/CopilotKit/CopilotKit" target="_blank" rel="noopener" class="project-name">CopilotKit</a>
+    <span class="lang-pill lang-TypeScript">TypeScript</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>35,000</strong></span>
+    <span class="weekly-gain">+2,500</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">构建 Agent 原生应用的开源框架，支持主流前端框架深度集成 AI Agent 能力。</p>
+  <ul class="feature-list">
+    <li>生成式 UI 动态渲染 Agent 输出</li>
+    <li>共享状态实现人机实时协作</li>
+    <li>React/Angular/Vue/React Native 全框架支持</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">前端开发者</span>
+    <span class="tag">Agent 应用产品化</span>
+    <span class="tag">企业 SaaS AI 功能集成</span>
+    <span class="tag">交互式 AI 产品</span>
+  </div>
+</div>
+
+<!-- #12 -->
+<div class="card">
+  <div class="card-top">
+    <div class="rank">12</div>
+    <a href="https://github.com/openai/codex-plugins" target="_blank" rel="noopener" class="project-name">codex-plugins</a>
+    <span class="lang-pill lang-JavaScript">JavaScript</span>
+  </div>
+  <div class="star-row">
+    <span class="total-stars">总 Star：<strong>2,900</strong></span>
+    <span class="weekly-gain">+1,400</span>
+  </div>
+  <div class="divider"></div>
+  <p class="summary">OpenAI 官方 Codex 插件示例集合，展示多场景 AI 开发插件的最佳实践。</p>
+  <ul class="feature-list">
+    <li>覆盖 Figma 设计/Notion 知识管理/iOS 开发/Web 部署等多场景</li>
+    <li>每个插件含 manifest + 技能文件</li>
+    <li>官方维护的插件开发参考</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">Codex 用户</span>
+    <span class="tag">插件开发者</span>
+    <span class="tag">AI 开发工具链定制</span>
+    <span class="tag">IDE 扩展开发</span>
+  </div>
+</div>
+
+</div><!-- /.grid -->
+
+<!-- Footer -->
+<footer class="footer">
+  数据来源：GitHub Trending · 抓取时间：2026-06-18
+</footer>
+
+</div>
+</body>
+</html>
