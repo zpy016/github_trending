@@ -1,3 +1,14 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: 57f98f3ce10c768678fa4a594842b631_7ad94b3c6b2f11f1a0095254002afed2
+    ReservedCode1: nMx01UE8kELhTOTRs2ZLorBuYa6rVb1qjyG/hYvzPK8iSMkkPvnCGeXDH4Y6qLWLbA1r/YTEHdTZZKDZR/vSlSzPWftI7jSDxctBtlz7ioWHAHtody0NdWI2TWtRXFSnnQ4rLdoDPhfECGuELlk9r4mjBZiXGS/mSjT+M0pHDYM0AsH2ZNrTf0OXLU0=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: 57f98f3ce10c768678fa4a594842b631_7ad94b3c6b2f11f1a0095254002afed2
+    ReservedCode2: nMx01UE8kELhTOTRs2ZLorBuYa6rVb1qjyG/hYvzPK8iSMkkPvnCGeXDH4Y6qLWLbA1r/YTEHdTZZKDZR/vSlSzPWftI7jSDxctBtlz7ioWHAHtody0NdWI2TWtRXFSnnQ4rLdoDPhfECGuELlk9r4mjBZiXGS/mSjT+M0pHDYM0AsH2ZNrTf0OXLU0=
+---
+
 # GitHub Trending 周报 (2026-06-19)
 
 > 采集时间：2026-06-19 | 数据来源：[GitHub Trending](https://github.com/trending?since=weekly) | 本期收录 Top 12 热门项目
@@ -137,3 +148,4 @@
 - **技术亮点**: 本地优先的 AI 编码 Agent 会话管理工具，支持搜索、分析、洞察和 Token 用量统计。覆盖 Claude Code、Codex 等 20+ 主流编码 Agent，提供会话回放、成本分析、效率对比和知识提取功能。采用 Go 语言构建的本地优先架构，所有数据存储在本地，保障隐私。
 - **行业意义**: AI 编码 Agent 的使用量正在爆发式增长，但缺乏系统性的管理工具。agentsview 填补了 Agent 会话可观测性的空白，让开发者和团队管理者能够量化 AI 编码的投资回报率。这对于企业大规模采用 AI 编码工具至关重要。
 - **适用场景**: 编码 Agent 用量追踪、AI 编码成本分析、开发效率评估、Agent 会话知识提取、团队 AI 使用优化
+*（内容由AI生成，仅供参考）*

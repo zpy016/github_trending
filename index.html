@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending AI 周刊</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh; display:flex; align-items:center; justify-content:center;
+  color:#fff;
+}
+.card {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(20px);
+  border-radius: 24px; padding: 48px;
+  max-width: 520px; text-align: center;
+  border: 1px solid rgba(255,255,255,.12);
+}
+h1 { font-size: 28px; margin-bottom: 8px; }
+p.sub { color: rgba(255,255,255,.55); font-size: 14px; margin-bottom: 32px; }
+.links { display:flex; flex-direction:column; gap:12px; }
+.links a {
+  display:block; padding:14px 24px;
+  background: rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px; color:#fff; text-decoration:none;
+  font-size:16px; transition: background .2s;
+}
+.links a:hover { background: rgba(255,255,255,.18); }
+.links a small { display:block; color:rgba(255,255,255,.4); font-size:12px; margin-top:4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>GitHub Trending AI 周刊</h1>
+  <p class="sub">每周一自动采集 · AI 深度解读 · 多端展示</p>
+  <div class="links">
+    <a href="trending-tracker/github-trending-tracker.html">
+      图文周刊页面
+      <small>HTML 卡片式报告，含 AI 解读</small>
+    </a>
+    <a href="trending-tracker/trending_data.json">
+      JSON 数据
+      <small>结构化原始数据</small>
+    </a>
+    <a href="trending-tracker/trending_data.csv">
+      CSV 表格
+      <small>Excel 可打开</small>
+    </a>
+    <a href="trending-tracker/trending_data.md">
+      Markdown 表格
+      <small>适合嵌入文档</small>
+    </a>
+  </div>
+</div>
+</body>
+</html>
