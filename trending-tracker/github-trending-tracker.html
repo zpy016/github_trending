@@ -3,296 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Trending 周刊</title>
+<title>GitHub Trending Weekly Report — 2026-06-22</title>
 <style>
-:root {
-  --bg:#0d1117; --bg2:#161b22; --card:#1c2333; --border:#30363d;
-  --text:#e6edf3; --text2:#8b949e; --accent:#58a6ff;
-  --green:#3fb950; --orange:#d2991d; --purple:#a371f7; --red:#f85149;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
-.hero{background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid var(--border);padding:60px 20px 40px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(88,166,255,.08),transparent 60%);pointer-events:none}
-.hero h1{font-size:2.6em;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;position:relative}
-.hero .sub{font-size:1.05em;color:var(--text2);position:relative}
-.hero .period{display:inline-flex;align-items:center;gap:10px;margin-top:18px;position:relative}
-.hero .period select{appearance:none;-webkit-appearance:none;padding:8px 36px 8px 16px;background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);border-radius:20px;color:var(--accent);font-size:.9em;cursor:pointer;font-family:inherit;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.container{max-width:1100px;margin:0 auto;padding:24px 20px}
-.insight-banner{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:28px}
-.insight-banner h2{font-size:1.15em;color:var(--orange);margin-bottom:14px}
-.insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.insight-item{background:var(--card);border-radius:8px;padding:14px;border-left:3px solid var(--accent)}
-.insight-item .num{font-size:1.6em;font-weight:700;color:var(--accent);margin-bottom:4px}
-.insight-item .label{font-size:.82em;color:var(--text2)}
-.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:24px;padding:14px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
-.toolbar .section-label{font-size:.78em;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
-.lang-filters{display:flex;flex-wrap:wrap;gap:6px;flex:1}
-.lang-tag-btn{font-size:.75em;padding:4px 12px;border-radius:14px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap}
-.lang-tag-btn:hover{border-color:var(--accent);color:var(--accent)}
-.lang-tag-btn.active{background:rgba(88,166,255,.15);border-color:var(--accent);color:var(--accent)}
-.lang-tag-btn .count{font-size:.85em;opacity:.5;margin-left:2px}
-#search-input{padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85em;width:180px;font-family:inherit;outline:none}
-#search-input:focus{border-color:var(--accent)}
-#search-input::placeholder{color:var(--text2)}
-.sort-select{appearance:none;-webkit-appearance:none;padding:6px 28px 6px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.82em;cursor:pointer;font-family:inherit;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
-.dl-wrapper{position:relative;margin-left:auto}
-.dl-btn{padding:6px 12px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:.78em;cursor:pointer;font-family:inherit;transition:all .15s;opacity:.6}
-.dl-btn:hover{opacity:1;border-color:var(--text2);color:var(--text)}
-.dl-menu{display:none;position:absolute;right:0;top:100%;margin-top:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;z-index:10;min-width:130px}
-.dl-menu.show{display:block}
-.dl-menu a{display:block;padding:10px 16px;color:var(--text2);text-decoration:none;font-size:.82em;transition:background .15s}
-.dl-menu a:hover{background:rgba(88,166,255,.08);color:var(--text)}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;margin-bottom:20px;transition:border-color .2s,box-shadow .2s}
-.project-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(88,166,255,.06)}
-.project-card:first-of-type{border-color:rgba(210,153,29,.4);background:linear-gradient(135deg,rgba(210,153,29,.04),var(--card) 30%)}
-.card-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}
-.rank{font-size:1.5em;font-weight:800;color:var(--text2);min-width:42px;line-height:1}
-.project-card:first-of-type .rank{color:var(--orange)}
-.project-card:nth-child(2) .rank{color:#b0b8c4}
-.project-card:nth-child(3) .rank{color:#c49a6c}
-.card-title-group{flex:1}
-.project-name{font-size:1.15em;font-weight:600;margin-bottom:4px}
-.project-name a{color:var(--accent);text-decoration:none}
-.project-name a:hover{text-decoration:underline}
-.lang-tag{display:inline-block;font-size:.73em;padding:2px 8px;background:rgba(88,166,255,.1);color:var(--accent);border-radius:4px;font-weight:500}
-.project-desc{color:var(--text2);font-size:.9em;margin-bottom:16px;line-height:1.5}
-.stats-row{display:flex;gap:24px;margin-bottom:18px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stat{display:flex;flex-direction:column;align-items:center;min-width:80px}
-.stat-value{font-size:1.2em;font-weight:700}
-.stat.highlight .stat-value{color:var(--green)}
-.stat-label{font-size:.7em;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-.analysis-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
-.analysis-block{background:var(--bg2);border-radius:8px;padding:14px;border-left:3px solid var(--border)}
-.analysis-block.tech{border-left-color:var(--accent)}
-.analysis-block.scenarios{border-left-color:var(--green)}
-.analysis-block h4{font-size:.78em;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
-.analysis-block.tech h4{color:var(--accent)}
-.analysis-block.scenarios h4{color:var(--green)}
-.features-list{list-style:none;padding:0}
-.features-list li{font-size:.82em;color:var(--text2);padding:2px 0;padding-left:14px;position:relative;line-height:1.5}
-.features-list li::before{content:'·';position:absolute;left:2px;color:var(--accent)}
-.tags-row{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:.7em;padding:3px 10px;background:rgba(163,113,247,.1);color:var(--purple);border-radius:12px;font-weight:500}
-.empty-state{text-align:center;padding:60px 20px;color:var(--text2)}
-.footer{text-align:center;padding:40px 20px;color:var(--text2);font-size:.82em;border-top:1px solid var(--border);margin-top:40px}
-.footer a{color:var(--accent);text-decoration:none}
-.result-count{font-size:.85em;color:var(--text2);margin-bottom:12px}
-@media(max-width:768px){
-  .hero h1{font-size:1.8em}
-  .toolbar{flex-direction:column;align-items:stretch}
-  #search-input{width:100%}
-  .analysis-section{grid-template-columns:1fr}
-  .stats-row{gap:12px}
-  .stat{min-width:60px}
-  .stat-value{font-size:1.05em}
-}
+    :root {
+        --bg: #0d1117;
+        --card-bg: #161b22;
+        --border: #30363d;
+        --text: #c9d1d9;
+        --text-secondary: #8b949e;
+        --accent: #58a6ff;
+        --green: #3fb950;
+        --orange: #d2991d;
+        --purple: #a371f7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 60px 0 40px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 40px;
+    }
+    .header h1 {
+        font-size: 2.4em;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent), var(--purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+    }
+    .header .subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+    .stat-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 24px;
+        text-align: center;
+        min-width: 140px;
+    }
+    .stat-card .stat-value {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: var(--accent);
+    }
+    .stat-card .stat-label {
+        font-size: 0.85em;
+        color: var(--text-secondary);
+        margin-top: 4px;
+    }
+    
+    /* Project Cards */
+    .projects { display: flex; flex-direction: column; gap: 24px; }
+    .project-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+    }
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    .rank {
+        font-size: 1.4em;
+        font-weight: 700;
+        min-width: 36px;
+    }
+    .project-title a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+    .project-title a:hover { text-decoration: underline; }
+    .description {
+        color: var(--text-secondary);
+        margin-bottom: 14px;
+        font-size: 0.95em;
+    }
+    .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+    .lang-badge {
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        font-weight: 600;
+    }
+    .stars { color: var(--orange); font-weight: 600; font-size: 0.9em; }
+    .weekly { color: var(--green); font-weight: 600; font-size: 0.9em; }
+    
+    /* Insight Box */
+    .insight-box {
+        background: linear-gradient(135deg, #1a1f2e, #1c1928);
+        border: 1px solid #2d2d4a;
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .insight-label {
+        color: var(--purple);
+        font-weight: 700;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+    .insight-highlight {
+        color: #e6e6e6;
+        font-weight: 600;
+        font-size: 1.05em;
+        margin-bottom: 10px;
+        padding-left: 12px;
+        border-left: 3px solid var(--purple);
+    }
+    .insight-analysis {
+        color: var(--text-secondary);
+        font-size: 0.92em;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+    .insight-scenario {
+        color: var(--text-secondary);
+        font-size: 0.85em;
+        font-style: italic;
+    }
+    
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 40px 0;
+        color: var(--text-secondary);
+        font-size: 0.85em;
+        border-top: 1px solid var(--border);
+        margin-top: 40px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+        .header h1 { font-size: 1.6em; }
+        .project-card { padding: 18px; }
+        .stat-card { min-width: 100px; padding: 12px 16px; }
+    }
 </style>
 </head>
 <body>
-<div class="hero">
-  <h1>GitHub Trending 周刊</h1>
-  <p class="sub">AI 时代的技术脉搏，每周精选全球热门开源项目</p>
-  <div class="period">
-    <select id="period-select"></select>
-  </div>
-</div>
-
 <div class="container">
-  <div class="insight-banner">
-    <h2>本周趋势洞察</h2>
-    <div class="insight-grid" id="insight-grid"></div>
-  </div>
-
-  <div class="toolbar">
-    <span class="section-label">语言</span>
-    <div class="lang-filters" id="lang-filters"></div>
-    <input type="text" id="search-input" placeholder="搜索项目...">
-    <select class="sort-select" id="sort-select">
-      <option value="weekly">本周新增 ↓</option>
-      <option value="total">总 Stars ↓</option>
-      <option value="name">名称 A-Z</option>
-    </select>
-    <div class="dl-wrapper">
-      <button class="dl-btn" id="dl-btn">⬇ 下载数据</button>
-      <div class="dl-menu" id="dl-menu">
-        <a href="#" data-format="json">JSON 数据</a>
-        <a href="#" data-format="csv">CSV 表格</a>
-        <a href="#" data-format="md">Markdown</a>
-      </div>
+    <div class="header">
+        <h1>GitHub Trending Weekly</h1>
+        <p class="subtitle">2026-06-22 — Top 12 Trending Repositories</p>
     </div>
-  </div>
 
-  <div class="result-count" id="result-count"></div>
-  <div id="cards-container"></div>
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">60,593</div>
+            <div class="stat-label">Stars This Week</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">427,693</div>
+            <div class="stat-label">Total Stars</div>
+        </div>
+    </div>
+
+    <div class="projects">
+        
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">🥇</span>
+                    <div class="project-title">
+                        <a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">DeusData/codebase-memory-mcp</a>
+                    </div>
+                </div>
+                <p class="description">High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#555555">C</span>
+                    <span class="stars">⭐ 10,405</span>
+                    <span class="weekly">🔥 +6,372 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">毫秒级代码索引，158语言零依赖</div>
+                    <div class="insight-analysis">codebase-memory-mcp 将整个代码库压缩为持久化知识图谱，平均仓库在毫秒内完成索引。作为一个单一静态二进制文件，它无需任何外部依赖即可在 158 种语言中实现亚毫秒级查询，将 Token 消耗降低 99%。这标志着 MCP 生态从「工具调用」向「知识记忆」的范式跃迁——AI 不再每次重新阅读代码，而是在持久化的语义图谱上进行推理。</div>
+                    <div class="insight-scenario">🎯 适用场景: 大型代码库的 AI 辅助开发、代码审查自动化、企业级知识管理</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">🥈</span>
+                    <div class="project-title">
+                        <a href="https://github.com/chopratejas/headroom" target="_blank" rel="noopener">chopratejas/headroom</a>
+                    </div>
+                </div>
+                <p class="description">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3572A5">Python</span>
+                    <span class="stars">⭐ 44,651</span>
+                    <span class="weekly">🔥 +16,102 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">LLM上下文压缩，Token节省60-95%</div>
+                    <div class="insight-analysis">headroom 在工具输出、日志、文件及 RAG 数据块到达 LLM 之前进行智能压缩，在保持相同回答质量的前提下将 Token 消耗降低 60-95%。它提供库、代理和 MCP Server 三种集成形态，这意味着它可以无缝嵌入现有 AI 工作流。本质上，它解决了当前 LLM 应用最昂贵的环节——上下文窗口的经济性问题，是 AI 工程化落地的关键基础设施。</div>
+                    <div class="insight-scenario">🎯 适用场景: AI Agent 系统优化、RAG 管道降本、大规模日志分析</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">🥉</span>
+                    <div class="project-title">
+                        <a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Panniantong/Agent-Reach</a>
+                    </div>
+                </div>
+                <p class="description">Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3572A5">Python</span>
+                    <span class="stars">⭐ 36,942</span>
+                    <span class="weekly">🔥 +8,233 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">给AI装上互联网之眼，零API费用</div>
+                    <div class="insight-analysis">Agent-Reach 让 AI Agent 能够阅读和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等全网内容，仅通过一条 CLI 命令即可实现，完全零 API 费用。它本质上构建了一个面向 AI 的通用互联网感知层，打破了传统 API 封锁壁垒，使 AI Agent 获得了前所未有的信息获取自由度。这对情报分析、竞品监测等场景意义重大。</div>
+                    <div class="insight-scenario">🎯 适用场景: 竞品情报监测、社交媒体分析、AI 驱动的互联网调研</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#4</span>
+                    <div class="project-title">
+                        <a href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener">iptv-org/iptv</a>
+                    </div>
+                </div>
+                <p class="description">Collection of publicly available IPTV channels from all over the world</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3178c6">TypeScript</span>
+                    <span class="stars">⭐ 127,163</span>
+                    <span class="weekly">🔥 +7,266 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">全球IPTV频道大全，12.7万星</div>
+                    <div class="insight-analysis">iptv-org/iptv 汇聚了来自全球各地公开可用的 IPTV 频道链接，以 127,163 Stars 成为本周趋势榜单上星数最高的项目。该项目不仅是技术资源的集大成者，更反映了开源社区对信息自由获取的持续追求。其维护模式（社区贡献 + 自动化验证）为大规模众包数据项目提供了可参考的治理范式。</div>
+                    <div class="insight-scenario">🎯 适用场景: 流媒体研究、全球化内容聚合、网络传输协议测试</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#5</span>
+                    <div class="project-title">
+                        <a href="https://github.com/n0-computer/iroh" target="_blank" rel="noopener">n0-computer/iroh</a>
+                    </div>
+                </div>
+                <p class="description">IP addresses break, dial keys instead. Modular networking stack in Rust.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#dea584">Rust</span>
+                    <span class="stars">⭐ 10,457</span>
+                    <span class="weekly">🔥 +1,712 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">Rust重写网络协议栈，IP地址崩溃时代的解药</div>
+                    <div class="insight-analysis">iroh 提出一个核心理念——IP 地址会失效，应该用密钥来拨号。这个用 Rust 编写的模块化网络协议栈从根本上重构了互联网寻址方式，将身份与位置解耦。它代表了去中心化网络基础设施从实验走向工程化的关键一步，Rust 的内存安全特性使其在网络协议实现中具有天然优势。</div>
+                    <div class="insight-scenario">🎯 适用场景: P2P 网络应用、去中心化存储、边缘计算通信层</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#6</span>
+                    <div class="project-title">
+                        <a href="https://github.com/google-research/timesfm" target="_blank" rel="noopener">google-research/timesfm</a>
+                    </div>
+                </div>
+                <p class="description">TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3572A5">Python</span>
+                    <span class="stars">⭐ 24,904</span>
+                    <span class="weekly">🔥 +4,114 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">Google时序基础模型，预训练预测引擎</div>
+                    <div class="insight-analysis">TimesFM 是 Google Research 发布的预训练时序基础模型，专为时序预测任务设计。与传统的针对每个序列单独训练的模型不同，TimesFM 采用「预训练+微调」的范式，大幅降低了时序预测的门槛和计算成本。这标志着时序分析领域正在迎来自己的「GPT 时刻」——从专用小模型走向通用基础模型。</div>
+                    <div class="insight-scenario">🎯 适用场景: 金融预测、供应链需求预测、IoT 传感器数据分析</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#7</span>
+                    <div class="project-title">
+                        <a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">NVIDIA/SkillSpector</a>
+                    </div>
+                </div>
+                <p class="description">Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3572A5">Python</span>
+                    <span class="stars">⭐ 9,063</span>
+                    <span class="weekly">🔥 +4,055 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">NVIDIA出品，AI Agent技能安全扫描器</div>
+                    <div class="insight-analysis">SkillSpector 是 NVIDIA 推出的 AI Agent 技能安全扫描器，专门检测漏洞、恶意模式和安全风险。随着 AI Agent 生态爆炸式增长，技能/插件市场成为新的攻击面——恶意技能可以窃取数据、执行未授权操作。SkillSpector 的出现标志着 AI Agent 安全已从「事后审计」迈入「事前扫描」的工程化阶段。</div>
+                    <div class="insight-scenario">🎯 适用场景: AI Agent 安全审计、企业 AI 治理、插件/技能市场合规检测</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#8</span>
+                    <div class="project-title">
+                        <a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" rel="noopener">asgeirtj/system_prompts_leaks</a>
+                    </div>
+                </div>
+                <p class="description">Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#f1e05a">JavaScript</span>
+                    <span class="stars">⭐ 44,478</span>
+                    <span class="weekly">🔥 +1,984 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">系统性泄露：主流AI系统提示词全曝光</div>
+                    <div class="insight-analysis">system_prompts_leaks 系统性地收集并公开了 Anthropic Claude、OpenAI ChatGPT、Google Gemini、xAI Grok 等主流 AI 模型的系统提示词。这一项目引发了关于 AI 透明度与安全性的激烈讨论——它既是安全研究的宝贵资源，也暴露了当前 AI 系统在提示词保护方面的脆弱性。项目的持续更新反映了社区对 AI 黑箱问题的持久关注。</div>
+                    <div class="insight-scenario">🎯 适用场景: AI 安全研究、提示工程对抗性测试、AI 透明度审计</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#9</span>
+                    <div class="project-title">
+                        <a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">calesthio/OpenMontage</a>
+                    </div>
+                </div>
+                <p class="description">World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3572A5">Python</span>
+                    <span class="stars">⭐ 8,987</span>
+                    <span class="weekly">🔥 +2,867 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">全球首个开源Agent视频制作系统</div>
+                    <div class="insight-analysis">OpenMontage 是首个开源的、基于 Agent 的视频制作系统，包含 12 条流水线、52 个工具、500+ Agent 技能。它将 AI 编程助手转变为一个完整的视频制作工作室，从脚本撰写、素材搜索、剪辑编排到最终渲染全流程自动化。这预示着内容创作领域正在从「AI 辅助」向「AI 原生」加速演进。</div>
+                    <div class="insight-scenario">🎯 适用场景: 自动化视频内容生产、营销素材批量生成、教育视频制作</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#10</span>
+                    <div class="project-title">
+                        <a href="https://github.com/withastro/flue" target="_blank" rel="noopener">withastro/flue</a>
+                    </div>
+                </div>
+                <p class="description">The sandbox agent framework.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3178c6">TypeScript</span>
+                    <span class="stars">⭐ 6,311</span>
+                    <span class="weekly">🔥 +1,272 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">沙盒Agent框架，安全执行第一</div>
+                    <div class="insight-analysis">flue 是一个沙盒 Agent 框架，核心理念是将 AI Agent 的执行环境与宿主系统完全隔离。它强调安全第一的设计哲学，适合在不可信代码执行、多租户 Agent 服务等场景中使用。在 AI Agent 日益自主化的趋势下，沙盒化执行环境将成为标配基础设施。</div>
+                    <div class="insight-scenario">🎯 适用场景: 多租户 AI Agent 平台、不可信代码安全执行、Agent 测试与评估</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#11</span>
+                    <div class="project-title">
+                        <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills</a>
+                    </div>
+                </div>
+                <p class="description">Production-grade engineering skills for AI coding agents.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#89e051">Shell</span>
+                    <span class="stars">⭐ 64,816</span>
+                    <span class="weekly">🔥 +5,610 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">6.4万星，AI编程Agent的生产级技能库</div>
+                    <div class="insight-analysis">agent-skills 为 AI 编程 Agent 提供了一套生产级工程技能集合，涵盖代码生成、测试、部署、监控等完整 DevOps 链路。其 64,816 Stars 和 Shell 语言实现表明社区对「让 AI 写出符合工程规范的代码」有强烈需求。这不是一个玩具项目，而是直接面向生产环境的工程实践沉淀。</div>
+                    <div class="insight-scenario">🎯 适用场景: AI 辅助软件工程、CI/CD 自动化、代码质量保障</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="rank">#12</span>
+                    <div class="project-title">
+                        <a href="https://github.com/Kong/insomnia" target="_blank" rel="noopener">Kong/insomnia</a>
+                    </div>
+                </div>
+                <p class="description">The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.</p>
+                <div class="meta-row">
+                    <span class="lang-badge" style="background-color:#3178c6">TypeScript</span>
+                    <span class="stars">⭐ 39,516</span>
+                    <span class="weekly">🔥 +1,006 this week</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-label">💡 AI 深度解读</div>
+                    <div class="insight-highlight">全协议API客户端，GraphQL到gRPC全覆盖</div>
+                    <div class="insight-analysis">Insomnia 是开源跨平台 API 客户端，支持 GraphQL、REST、WebSockets、SSE 和 gRPC 等全部主流协议，并提供 Cloud、Local 和 Git 多种存储方式。在微服务和多协议并存的现代架构中，Insomnia 提供了统一的 API 调试入口，其 39,516 Stars 证明了开发社区对「一站式 API 工具」的持续刚需。</div>
+                    <div class="insight-scenario">🎯 适用场景: API 开发与调试、微服务测试、前后端联调协作</div>
+                </div>
+            </div>
+    </div>
+
+    <div class="footer">
+        <p>Generated by Marvis AI · Data sourced from GitHub Trending · 2026-06-22 10:31 UTC</p>
+    </div>
 </div>
-
-<div class="footer">
-  <p>数据来源：<a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending</a> | 生成时间：<span id="fetch-time">--</span></p>
-  <p style="margin-top:6px;font-size:.75em">Generated by Marvis AI Assistant</p>
-</div>
-
-<script>
-(function(){
-  var periodSelect=document.getElementById('period-select');
-  var langFilters=document.getElementById('lang-filters');
-  var searchInput=document.getElementById('search-input');
-  var sortSelect=document.getElementById('sort-select');
-  var insightGrid=document.getElementById('insight-grid');
-  var cardsContainer=document.getElementById('cards-container');
-  var resultCount=document.getElementById('result-count');
-  var fetchTimeSpan=document.getElementById('fetch-time');
-  var dlBtn=document.getElementById('dl-btn');
-  var dlMenu=document.getElementById('dl-menu');
-  var allWeeks=[],currentPeriod=null,activeLang=null;
-
-  dlBtn.addEventListener('click',function(e){e.stopPropagation();dlMenu.classList.toggle('show')});
-  document.addEventListener('click',function(){dlMenu.classList.remove('show')});
-  dlMenu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      var fmt=this.dataset.format;
-      var urls={json:'trending_data.json',csv:'trending_data.csv',md:'trending_data.md'};
-      var el=document.createElement('a');
-      el.href=urls[fmt];el.download='trending_data.'+fmt;
-      document.body.appendChild(el);el.click();document.body.removeChild(el);
-      dlMenu.classList.remove('show');
-    });
-  });
-
-  fetch('trending_data.json')
-    .then(function(r){return r.json()})
-    .then(function(data){
-      allWeeks=data.weeks||[];
-      if(!allWeeks.length){showEmpty('暂无数据');return}
-      allWeeks.forEach(function(w){
-        var opt=document.createElement('option');
-        opt.value=w.period;opt.textContent=w.date_range+' ('+w.period+')';
-        periodSelect.appendChild(opt);
-      });
-      currentPeriod=allWeeks[0].period;
-      periodSelect.value=currentPeriod;
-      render();
-    })
-    .catch(function(){showEmpty('无法加载数据文件')});
-
-  periodSelect.addEventListener('change',function(){
-    currentPeriod=periodSelect.value;activeLang=null;
-    searchInput.value='';sortSelect.value='weekly';render();
-  });
-  searchInput.addEventListener('input',render);
-  sortSelect.addEventListener('change',render);
-
-  function getCurrentWeek(){
-    for(var i=0;i<allWeeks.length;i++){
-      if(allWeeks[i].period===currentPeriod)return allWeeks[i];
-    }
-    return allWeeks[0];
-  }
-
-  function render(){
-    var week=getCurrentWeek();
-    if(!week){showEmpty('无数据');return}
-    var projects=week.projects||[];
-    fetchTimeSpan.textContent=week.fetch_time?week.fetch_time.split('T')[0]:'--';
-
-    var langMap={};
-    projects.forEach(function(p){var l=p.language||'Other';langMap[l]=(langMap[l]||0)+1});
-    var langs=Object.keys(langMap).sort(function(a,b){return langMap[b]-langMap[a]});
-
-    langFilters.innerHTML='';
-    var allBtn=document.createElement('button');
-    allBtn.className='lang-tag-btn'+(activeLang===null?' active':'');
-    allBtn.textContent='全部 ('+projects.length+')';
-    allBtn.addEventListener('click',function(){activeLang=null;render()});
-    langFilters.appendChild(allBtn);
-    langs.forEach(function(l){
-      var btn=document.createElement('button');
-      btn.className='lang-tag-btn'+(activeLang===l?' active':'');
-      btn.innerHTML=l+' <span class="count">'+langMap[l]+'</span>';
-      btn.addEventListener('click',function(){activeLang=l;render()});
-      langFilters.appendChild(btn);
-    });
-
-    var filtered=projects.slice();
-    if(activeLang){filtered=filtered.filter(function(p){return(p.language||'Other')===activeLang})}
-    var searchTerm=searchInput.value.trim().toLowerCase();
-    if(searchTerm){
-      filtered=filtered.filter(function(p){
-        var hay=[p.name,p.author,p.full_name,p.summary].concat(p.features||[],p.scenarios||[]).join(' ').toLowerCase();
-        return hay.indexOf(searchTerm)!==-1;
-      });
-    }
-
-    var sortBy=sortSelect.value;
-    if(sortBy==='weekly'){filtered.sort(function(a,b){return(b.stars_weekly||0)-(a.stars_weekly||0)})}
-    else if(sortBy==='total'){filtered.sort(function(a,b){return(b.stars||0)-(a.stars||0)})}
-    else if(sortBy==='name'){filtered.sort(function(a,b){return a.name.localeCompare(b.name)})}
-
-    resultCount.textContent='共 '+filtered.length+' 个项目'+(filtered.length!==projects.length?'（已筛选）':'');
-
-    renderInsights(week,projects);
-    cardsContainer.innerHTML='';
-    if(!filtered.length){cardsContainer.innerHTML='<div class="empty-state"><p>没有匹配的项目</p></div>';return}
-    filtered.forEach(function(p,i){
-      cardsContainer.appendChild(createCard(p,i+1));
-    });
-  }
-
-  function renderInsights(week,projects){
-    var totalWeekly=0;
-    projects.forEach(function(p){totalWeekly+=p.stars_weekly||0});
-    var sorted=[].concat(projects).sort(function(a,b){return(b.stars_weekly||0)-(a.stars_weekly||0)});
-    var topProj=sorted[0];
-    var langSet={};
-    projects.forEach(function(p){if(p.language)langSet[p.language]=true});
-    var langCount=Object.keys(langSet).length;
-    var aiCount=0;
-    projects.forEach(function(p){
-      var t=[p.name,p.summary].concat(p.features||[],p.scenarios||[]).join(' ').toLowerCase();
-      if(/ai|agent|llm|智能|copilot|gpt|claude|skill/i.test(t))aiCount++;
-    });
-    var items=[
-      {num:projects.length,label:'收录项目'},
-      {num:langCount,label:'编程语言'},
-      {num:aiCount,label:'AI/Agent 相关'},
-      {num:topProj?topProj.stars_weekly.toLocaleString():'--',label:'最高单周新增'}
-    ];
-    insightGrid.innerHTML=items.map(function(it){
-      return '<div class="insight-item"><div class="num">'+it.num+'</div><div class="label">'+it.label+'</div></div>';
-    }).join('');
-  }
-
-  function createCard(p,rank){
-    var div=document.createElement('div');
-    div.className='project-card';
-    div.innerHTML=[
-      '<div class="card-header">',
-        '<span class="rank">#'+rank+'</span>',
-        '<div class="card-title-group">',
-          '<h3 class="project-name"><a href="'+esc(p.url)+'" target="_blank">'+esc(p.full_name||p.name)+'</a></h3>',
-          p.language?'<span class="lang-tag">'+esc(p.language)+'</span>':'',
-        '</div>',
-      '</div>',
-      '<p class="project-desc">'+esc(p.summary||'')+'</p>',
-      '<div class="stats-row">',
-        '<div class="stat"><span class="stat-value">'+(p.stars||0).toLocaleString()+'</span><span class="stat-label">Total Stars</span></div>',
-        '<div class="stat highlight"><span class="stat-value">+'+(p.stars_weekly||0).toLocaleString()+'</span><span class="stat-label">This Week</span></div>',
-      '</div>',
-      '<div class="analysis-section">',
-        (p.features||[]).length?('<div class="analysis-block tech"><h4>核心特性</h4><ul class="features-list">'+
-          (p.features||[]).map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul></div>'):'',
-        (p.scenarios||[]).length?('<div class="analysis-block scenarios"><h4>适用场景</h4><div class="tags-row">'+
-          (p.scenarios||[]).map(function(s){return '<span class="tag">'+esc(s)+'</span>'}).join('')+'</div></div>'):'',
-      '</div>'
-    ].join('');
-    return div;
-  }
-
-  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
-  function showEmpty(msg){cardsContainer.innerHTML='<div class="empty-state"><p>'+msg+'</p></div>'}
-
-})();
-</script>
 </body>
 </html>
