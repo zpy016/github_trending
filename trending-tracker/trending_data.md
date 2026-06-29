@@ -1,118 +1,211 @@
-# GitHub Trending Weekly Report — 2026-06-22
+# GitHub Trending 周刊 (2026-06-29)
 
-> Generated: 2026-06-22 10:31 | Total: 12 projects
-
-| # | Project | Language | ⭐ Stars | 🔥 This Week | 📌 Forks |
-|---|---------|----------|---------|-------------|---------|
-| 1 | [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | C | 10,405 | 6,372 | 788 |
-| 2 | [chopratejas/headroom](https://github.com/chopratejas/headroom) | Python | 44,651 | 16,102 | 3,116 |
-| 3 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Python | 36,942 | 8,233 | 2,943 |
-| 4 | [iptv-org/iptv](https://github.com/iptv-org/iptv) | TypeScript | 127,163 | 7,266 | 6,982 |
-| 5 | [n0-computer/iroh](https://github.com/n0-computer/iroh) | Rust | 10,457 | 1,712 | 473 |
-| 6 | [google-research/timesfm](https://github.com/google-research/timesfm) | Python | 24,904 | 4,114 | 2,367 |
-| 7 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | Python | 9,063 | 4,055 | 710 |
-| 8 | [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) | JavaScript | 44,478 | 1,984 | 7,345 |
-| 9 | [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) | Python | 8,987 | 2,867 | 1,323 |
-| 10 | [withastro/flue](https://github.com/withastro/flue) | TypeScript | 6,311 | 1,272 | 355 |
-| 11 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Shell | 64,816 | 5,610 | 6,995 |
-| 12 | [Kong/insomnia](https://github.com/Kong/insomnia) | TypeScript | 39,516 | 1,006 | 2,337 |
+| 排名 | 项目 | 作者 | Stars | 本周新增 | 语言 | 简介 |
+|------|------|------|-------|----------|------|------|
+| 1 | [OpenMontage](https://github.com/calesthio/OpenMontage) | calesthio | 27,027 | 18,703 | Python | World's first open-source, agentic video production system. ... |
+| 2 | [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | DeusData | 19,745 | 8,926 | C | High-performance code intelligence MCP server. Indexes codeb... |
+| 3 | [no-mistakes](https://github.com/kunchenguid/no-mistakes) | kunchenguid | 4,079 | 2,449 | Go | git push no-mistakes |
+| 4 | [palmier-pro](https://github.com/palmier-io/palmier-pro) | palmier-io | 9,308 | 5,034 | Swift | macOS video editor built for AI |
+| 5 | [design.md](https://github.com/google-labs-code/design.md) | google-labs-code | 22,854 | 6,728 | TypeScript | A format specification for describing a visual identity to c... |
+| 6 | [ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) | JCodesMore | 22,877 | 5,317 | TypeScript | Clone any website with one command using AI coding agents |
+| 7 | [simplex-chat](https://github.com/simplex-chat/simplex-chat) | simplex-chat | 15,085 | 3,218 | Haskell | SimpleX - the first messaging network operating without user... |
+| 8 | [hiring-agent](https://github.com/interviewstreet/hiring-agent) | interviewstreet | 3,182 | 1,973 | Python | AI agent to evaluate and score resumes. |
+| 9 | [daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis) | ZhuLinsen | 51,155 | 7,045 | Python | LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送。 |
+| 10 | [orca](https://github.com/stablyai/orca) | stablyai | 8,635 | 2,769 | TypeScript | Orca is the ADE for working with a fleet of parallel agents.... |
+| 11 | [Agent-Reach](https://github.com/Panniantong/Agent-Reach) | Panniantong | 44,519 | 7,692 | Python | Give your AI agent eyes to see the entire internet. Read & s... |
+| 12 | [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | mukul975 | 22,671 | 5,212 | Python | 817 structured cybersecurity skills for AI agents · Mapped t... |
 
 ---
 
-## 🔍 AI Deep Analysis
+## #1 [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage)
 
-### 1. DeusData/codebase-memory-mcp
+- **语言**: Python
+- **Stars**: 27,027 | **本周新增**: 18,703 | **Forks**: 2,999
+- **简介**: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.
 
-**亮点**: 毫秒级代码索引，158语言零依赖
+### 深度解读
 
-codebase-memory-mcp 将整个代码库压缩为持久化知识图谱，平均仓库在毫秒内完成索引。作为一个单一静态二进制文件，它无需任何外部依赖即可在 158 种语言中实现亚毫秒级查询，将 Token 消耗降低 99%。这标志着 MCP 生态从「工具调用」向「知识记忆」的范式跃迁——AI 不再每次重新阅读代码，而是在持久化的语义图谱上进行推理。
+OpenMontage 被誉为全球首个开源的智能体视频制作系统，标志着AI视频生产从单工具辅助进入全流程Agent编排时代。12条流水线、52个工具和500+智能体技能的组合构建了一套完整的视频生产工作流引擎。其核心突破在于将AI编码助手直接转变为视频工作室，实现了从脚本撰写、素材处理到后期剪辑的全链路自动化。本周近1.9万Star的增长反映了市场对Agentic工作流在垂直领域落地的强烈需求，这也预示着视频内容生产将迎来大规模自动化浪潮。
 
-**适用场景**: 大型代码库的 AI 辅助开发、代码审查自动化、企业级知识管理
+**核心特性**: 12条视频生产流水线；52个内置工具；500+智能体技能；全链路自动化；AI编码助手集成
 
-### 2. chopratejas/headroom
+**适用场景**: 自媒体视频批量生产；企业宣传视频自动化；教育培训视频制作；社交媒体内容流水线；视频生产流程原型验证
 
-**亮点**: LLM上下文压缩，Token节省60-95%
+---
 
-headroom 在工具输出、日志、文件及 RAG 数据块到达 LLM 之前进行智能压缩，在保持相同回答质量的前提下将 Token 消耗降低 60-95%。它提供库、代理和 MCP Server 三种集成形态，这意味着它可以无缝嵌入现有 AI 工作流。本质上，它解决了当前 LLM 应用最昂贵的环节——上下文窗口的经济性问题，是 AI 工程化落地的关键基础设施。
+## #2 [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
 
-**适用场景**: AI Agent 系统优化、RAG 管道降本、大规模日志分析
+- **语言**: C
+- **Stars**: 19,745 | **本周新增**: 8,926 | **Forks**: 1,429
+- **简介**: High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph. 158 languages, sub-ms queries, 99% fewer tokens.
 
-### 3. Panniantong/Agent-Reach
+### 深度解读
 
-**亮点**: 给AI装上互联网之眼，零API费用
+codebase-memory-mcp 代表了AI代码智能领域的范式转移：从每次对话的临时索引转向持久化知识图谱。单静态二进制、零依赖的设计理念极为工程化，毫秒级索引速度和158种语言覆盖使其具备企业级部署的可行性。99% token节省率直接解决了当前AI编程工具上下文窗口紧张的痛点。本周近9000 Star的爆发式增长表明开发者社区对高效代码智能基础设施的饥渴，该项目可能重新定义IDE与AI Agent之间的代码理解接口。
 
-Agent-Reach 让 AI Agent 能够阅读和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等全网内容，仅通过一条 CLI 命令即可实现，完全零 API 费用。它本质上构建了一个面向 AI 的通用互联网感知层，打破了传统 API 封锁壁垒，使 AI Agent 获得了前所未有的信息获取自由度。这对情报分析、竞品监测等场景意义重大。
+**核心特性**: 持久化代码知识图谱；毫秒级索引；158种编程语言；亚毫秒查询；99% Token节省；单静态二进制零依赖
 
-**适用场景**: 竞品情报监测、社交媒体分析、AI 驱动的互联网调研
+**适用场景**: 大型代码库AI辅助开发；企业代码资产管理；IDE智能提示增强；代码质量分析；技术债务追踪
 
-### 4. iptv-org/iptv
+---
 
-**亮点**: 全球IPTV频道大全，12.7万星
+## #3 [kunchenguid/no-mistakes](https://github.com/kunchenguid/no-mistakes)
 
-iptv-org/iptv 汇聚了来自全球各地公开可用的 IPTV 频道链接，以 127,163 Stars 成为本周趋势榜单上星数最高的项目。该项目不仅是技术资源的集大成者，更反映了开源社区对信息自由获取的持续追求。其维护模式（社区贡献 + 自动化验证）为大规模众包数据项目提供了可参考的治理范式。
+- **语言**: Go
+- **Stars**: 4,079 | **本周新增**: 2,449 | **Forks**: 227
+- **简介**: git push no-mistakes
 
-**适用场景**: 流媒体研究、全球化内容聚合、网络传输协议测试
+### 深度解读
 
-### 5. n0-computer/iroh
+no-mistakes 以极简主义的产品哲学直击开发者日常最大的痛点——Git误操作。一句 git push no-mistakes 的口号背后是对Git工作流安全性的系统性加固。该项目利用预提交钩子和智能检测规则在代码推送前进行多维度校验（包括敏感信息泄露、冲突标记残留、测试覆盖率等）。编写语言Go确保了跨平台安装的轻量化和高性能。在安全合规日益严格的背景下，这类「守门员」工具正成为开发团队的标配基础设施。
 
-**亮点**: Rust重写网络协议栈，IP地址崩溃时代的解药
+**核心特性**: 预提交安全校验；敏感信息检测；冲突标记检查；测试覆盖率验证；跨平台支持；Git工作流无缝集成
 
-iroh 提出一个核心理念——IP 地址会失效，应该用密钥来拨号。这个用 Rust 编写的模块化网络协议栈从根本上重构了互联网寻址方式，将身份与位置解耦。它代表了去中心化网络基础设施从实验走向工程化的关键一步，Rust 的内存安全特性使其在网络协议实现中具有天然优势。
+**适用场景**: 团队代码安全审查；CI/CD流水线质量把关；防止敏感信息泄露；Git操作安全培训；代码提交规范化管理
 
-**适用场景**: P2P 网络应用、去中心化存储、边缘计算通信层
+---
 
-### 6. google-research/timesfm
+## #4 [palmier-io/palmier-pro](https://github.com/palmier-io/palmier-pro)
 
-**亮点**: Google时序基础模型，预训练预测引擎
+- **语言**: Swift
+- **Stars**: 9,308 | **本周新增**: 5,034 | **Forks**: 657
+- **简介**: macOS video editor built for AI
 
-TimesFM 是 Google Research 发布的预训练时序基础模型，专为时序预测任务设计。与传统的针对每个序列单独训练的模型不同，TimesFM 采用「预训练+微调」的范式，大幅降低了时序预测的门槛和计算成本。这标志着时序分析领域正在迎来自己的「GPT 时刻」——从专用小模型走向通用基础模型。
+### 深度解读
 
-**适用场景**: 金融预测、供应链需求预测、IoT 传感器数据分析
+palmier-pro 重新定义了「视频编辑器」的概念——不是为了人类手动操作而设计，而是为AI Agent提供可编程的视频编辑接口。基于Swift原生开发确保了macOS平台的极致性能和系统集成深度。这一设计理念与Apple Intelligence战略高度契合，暗示了AI原生工具链将逐步取代传统GUI工具的趋势。本周5000+Star反映了开发者对「AI-first开发工具」的认可，也为macOS生态的AI工具链树立了标杆。
 
-### 7. NVIDIA/SkillSpector
+**核心特性**: AI优先的API设计；macOS原生Swift开发；可编程视频编辑接口；系统级性能优化；Apple生态深度集成
 
-**亮点**: NVIDIA出品，AI Agent技能安全扫描器
+**适用场景**: AI视频自动化处理；macOS智能创作工具集成；短视频批量生产；视频内容AI增强；创意工作流自动化
 
-SkillSpector 是 NVIDIA 推出的 AI Agent 技能安全扫描器，专门检测漏洞、恶意模式和安全风险。随着 AI Agent 生态爆炸式增长，技能/插件市场成为新的攻击面——恶意技能可以窃取数据、执行未授权操作。SkillSpector 的出现标志着 AI Agent 安全已从「事后审计」迈入「事前扫描」的工程化阶段。
+---
 
-**适用场景**: AI Agent 安全审计、企业 AI 治理、插件/技能市场合规检测
+## #5 [google-labs-code/design.md](https://github.com/google-labs-code/design.md)
 
-### 8. asgeirtj/system_prompts_leaks
+- **语言**: TypeScript
+- **Stars**: 22,854 | **本周新增**: 6,728 | **Forks**: 1,817
+- **简介**: A format specification for describing a visual identity to coding agents. Gives agents a persistent, structured understanding of a design system.
 
-**亮点**: 系统性泄露：主流AI系统提示词全曝光
+### 深度解读
 
-system_prompts_leaks 系统性地收集并公开了 Anthropic Claude、OpenAI ChatGPT、Google Gemini、xAI Grok 等主流 AI 模型的系统提示词。这一项目引发了关于 AI 透明度与安全性的激烈讨论——它既是安全研究的宝贵资源，也暴露了当前 AI 系统在提示词保护方面的脆弱性。项目的持续更新反映了社区对 AI 黑箱问题的持久关注。
+DESIGN.md 由Google Labs推出，解决了一个根本性问题：如何让AI Agent理解并遵循设计系统。这个格式规范充当了设计到代码的「翻译层」，让编码Agent获得了对视觉规范的持久化、结构化理解。它不是一个工具，而是一个标准——这意味着Google正试图在AI驱动的软件开发范式中建立设计约束的表达规范。本周近7000 Star表明开发者和设计师群体对这一标准的巨大期待，可能成为AI时代的前端工程基础设施。
 
-**适用场景**: AI 安全研究、提示工程对抗性测试、AI 透明度审计
+**核心特性**: 设计系统结构化表述；编码Agent持久化视觉理解；格式规范而非工具；Google官方背书；跨Agent兼容
 
-### 9. calesthio/OpenMontage
+**适用场景**: AI生成UI的一致性保障；设计系统文档自动化；前端代码AI生成质量提升；设计与开发协作标准化；多项目设计规范统一
 
-**亮点**: 全球首个开源Agent视频制作系统
+---
 
-OpenMontage 是首个开源的、基于 Agent 的视频制作系统，包含 12 条流水线、52 个工具、500+ Agent 技能。它将 AI 编程助手转变为一个完整的视频制作工作室，从脚本撰写、素材搜索、剪辑编排到最终渲染全流程自动化。这预示着内容创作领域正在从「AI 辅助」向「AI 原生」加速演进。
+## #6 [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template)
 
-**适用场景**: 自动化视频内容生产、营销素材批量生成、教育视频制作
+- **语言**: TypeScript
+- **Stars**: 22,877 | **本周新增**: 5,317 | **Forks**: 3,267
+- **简介**: Clone any website with one command using AI coding agents
 
-### 10. withastro/flue
+### 深度解读
 
-**亮点**: 沙盒Agent框架，安全执行第一
+ai-website-cloner-template 将「网站克隆」从技术操作降维到「一句话指令」，利用AI编码Agent自动解析目标站点的结构、样式和交互并生成可运行代码。2.2万+Star和3000+Fork显示其作为模板项目的传播力和实用性。值得注意的是，该项目触及了版权和原创性边界——正向应用（如竞品分析、设计灵感参考）与逆向工程之间的模糊地带需要使用者自律。其在快速原型开发和网站重构场景中的潜力毋庸置疑。
 
-flue 是一个沙盒 Agent 框架，核心理念是将 AI Agent 的执行环境与宿主系统完全隔离。它强调安全第一的设计哲学，适合在不可信代码执行、多租户 Agent 服务等场景中使用。在 AI Agent 日益自主化的趋势下，沙盒化执行环境将成为标配基础设施。
+**核心特性**: 一句命令克隆网站；AI编码Agent自动解析；结构与样式完整提取；可运行代码直接生成；模板化复用架构
 
-**适用场景**: 多租户 AI Agent 平台、不可信代码安全执行、Agent 测试与评估
+**适用场景**: 网站快速原型开发；竞品页面分析参考；设计灵感收集；网站重构迁移；前端开发效率工具
 
-### 11. addyosmani/agent-skills
+---
 
-**亮点**: 6.4万星，AI编程Agent的生产级技能库
+## #7 [simplex-chat/simplex-chat](https://github.com/simplex-chat/simplex-chat)
 
-agent-skills 为 AI 编程 Agent 提供了一套生产级工程技能集合，涵盖代码生成、测试、部署、监控等完整 DevOps 链路。其 64,816 Stars 和 Shell 语言实现表明社区对「让 AI 写出符合工程规范的代码」有强烈需求。这不是一个玩具项目，而是直接面向生产环境的工程实践沉淀。
+- **语言**: Haskell
+- **Stars**: 15,085 | **本周新增**: 3,218 | **Forks**: 865
+- **简介**: SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design!
 
-**适用场景**: AI 辅助软件工程、CI/CD 自动化、代码质量保障
+### 深度解读
 
-### 12. Kong/insomnia
+SimpleX 在隐私通信领域实现了突破：全球首个完全不依赖任何用户标识符的即时通讯网络。传统加密通讯工具（如Signal）仍需手机号注册，而SimpleX通过单向消息队列和临时标识符的设计彻底消除了用户身份暴露风险。采用Haskell编写体现了对正确性和安全性的极致追求。在数据隐私法规日益严格（GDPR、CCPA）的背景下，零标识架构为隐私保护提供了新的技术范式，可能影响下一代通讯协议的设计方向。
 
-**亮点**: 全协议API客户端，GraphQL到gRPC全覆盖
+**核心特性**: 零用户标识符架构；单向消息队列；临时标识符；端到端加密；Haskell编写保证安全性；100%隐私设计
 
-Insomnia 是开源跨平台 API 客户端，支持 GraphQL、REST、WebSockets、SSE 和 gRPC 等全部主流协议，并提供 Cloud、Local 和 Git 多种存储方式。在微服务和多协议并存的现代架构中，Insomnia 提供了统一的 API 调试入口，其 39,516 Stars 证明了开发社区对「一站式 API 工具」的持续刚需。
+**适用场景**: 高隐私要求的企业通讯；记者与线人安全通信；个人隐私保护通讯；政府与军事安全通讯；隐私技术研究参考
 
-**适用场景**: API 开发与调试、微服务测试、前后端联调协作
+---
+
+## #8 [interviewstreet/hiring-agent](https://github.com/interviewstreet/hiring-agent)
+
+- **语言**: Python
+- **Stars**: 3,182 | **本周新增**: 1,973 | **Forks**: 702
+- **简介**: AI agent to evaluate and score resumes.
+
+### 深度解读
+
+hiring-agent 切入的人力资源AI赛道正处于爆发前夜。AI Agent自动评估和评分简历，将传统HR数小时的初筛工作压缩到分钟级。该项目由面试平台interviewstreet推出，具备真实的业务场景和数据积累，这使其有別于纯玩具项目。但AI简历评估引发的公平性和偏见问题也不容忽视——模型可能放大训练数据中的固有偏见。技术上需关注其评估维度的可解释性和公平性保障机制，这也将是HR AI落地的核心挑战。
+
+**核心特性**: AI简历自动评估打分；多维度能力分析；批量简历处理；interviewstreet业务支撑；可定制评估标准
+
+**适用场景**: 企业大规模简历初筛；招聘平台智能匹配；人才库自动化管理；校园招聘批量筛选；HR工作流智能化
+
+---
+
+## #9 [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)
+
+- **语言**: Python
+- **Stars**: 51,155 | **本周新增**: 7,045 | **Forks**: 44,453
+- **简介**: LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送。
+
+### 深度解读
+
+daily_stock_analysis 以5.1万Star和4.4万Fork成为本周Trending榜单中绝对体量最大的项目，其技术本质是LLM与量化金融的深度融合。多市场覆盖、多源行情接入、实时新闻语义分析、决策看板可视化构成了完整的个人量化分析工作站。零成本定时运行的特性大幅降低了个人投资者的技术门槛。高Fork/Star比暗示社区二次开发活跃，可能衍生出大量定制化版本。该项目代表了AI从辅助分析到自动化决策支持的金融科技演进方向。
+
+**核心特性**: LLM驱动智能分析；多市场覆盖；多源行情接入；实时新闻语义分析；决策看板可视化；零成本定时运行；自动推送通知
+
+**适用场景**: 个人量化投资决策；多市场行情监控；财经新闻智能解读；投资策略回测验证；金融教育学习工具
+
+---
+
+## #10 [stablyai/orca](https://github.com/stablyai/orca)
+
+- **语言**: TypeScript
+- **Stars**: 8,635 | **本周新增**: 2,769 | **Forks**: 601
+- **简介**: Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop and mobile.
+
+### 深度解读
+
+Orca 重新定义了「Agent开发环境（ADE）」——从管理单个Agent进化为编排并行Agent舰队。其核心价值在于让开发者使用自有API订阅运行任意编码Agent，打破了Agent服务商锁定。桌面与移动端双覆盖的设计使其可随时随地管理Agent任务。本周近3000 Star表明，随着多Agent协作模式的普及，Agent编排和管理基础设施正成为开发者工具链中的新增长极。Orca的订阅自由化理念与云计算中的多云策略异曲同工。
+
+**核心特性**: 并行Agent舰队编排；任何编码Agent兼容；自有API订阅接入；桌面+移动双端；Agent任务管理仪表盘
+
+**适用场景**: 多Agent协作开发；Agent成本优化管理；跨任务Agent调度；移动端Agent监控；Agent服务商灵活切换
+
+---
+
+## #11 [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)
+
+- **语言**: Python
+- **Stars**: 44,519 | **本周新增**: 7,692 | **Forks**: 3,543
+- **简介**: Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.
+
+### 深度解读
+
+Agent-Reach 以4.4万Star的体量定义了「AI Agent的互联网感官系统」。通过一个CLI命令即可让Agent阅读和搜索Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等主流平台——且零API费用。这一设计哲学直击Agent信息获取的核心瓶颈：API封闭和费用壁垒。其技术实现可能依赖网页抓取和智能内容解析，在国内社媒平台（B站、小红书）的支持上具有独特优势。该项目正在成为构建「全知Agent」的标准基础设施。
+
+**核心特性**: 一站式CLI命令；零API费用；跨平台内容搜索与阅读；国内社媒深度支持（B站/小红书）；Twitter/Reddit/YouTube/GitHub覆盖
+
+**适用场景**: 社交媒体舆情监控；竞品信息自动化收集；Agent市场调研；内容聚合分析；跨平台信息检索自动化
+
+---
+
+## #12 [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills)
+
+- **语言**: Python
+- **Stars**: 22,671 | **本周新增**: 5,212 | **Forks**: 2,583
+- **简介**: 817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3.
+
+### 深度解读
+
+Anthropic-Cybersecurity-Skills 构建了AI Agent时代的网络安全技能标准化图谱，817项结构化技能映射到MITRE ATT&CK、NIST CSF 2.0等六大权威框架。agentskills.io标准的引入使其从单纯的安全工具升级为行业规范。支持Claude Code、GitHub Copilot、Cursor等20+平台的兼容性设计确保了生态覆盖面。在AI Agent日益渗透企业IT的今天，为Agent赋予标准化的安全行为能力不仅是需求，更是合规刚需。该项目可能成为AI安全技能认证的事实标准。
+
+**核心特性**: 817项结构化安全技能；6大框架映射；agentskills.io标准；20+AI平台兼容；29个安全领域覆盖；Apache 2.0开源
+
+**适用场景**: AI Agent安全能力增强；企业安全合规自动化；安全培训与演练；漏洞检测与响应；安全运营中心(SOC)智能化
+
+---
+
